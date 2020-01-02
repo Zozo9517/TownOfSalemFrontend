@@ -1,0 +1,27 @@
+.navbar {
+    background-color: #1976d2 !important;
+    border-color: #1976d2 !important;
+    min-height: 3.25rem;
+    position: relative;
+    z-index: 30;
+    font-family: Roboto,sans-serif;
+  }
+  .title{
+      color: white;
+  }
+
+#register{
+    position: absolute;
+    right:80px;
+    margin: 10px;
+    margin-right: 0px;
+    width: 80px;
+}
+
+#signin{
+  position: absolute;
+  right:0;
+  margin: 10px;
+  margin-right: 0px;
+  width: 80px;
+}

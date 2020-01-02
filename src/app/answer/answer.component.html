@@ -1,0 +1,16 @@
+<div class="container">
+  <h1 class="title is-2">Válaszd ki a szerepedet</h1>
+  <div class="control">
+    <label class="radio">
+      <input (click)="setRole('townie')" type="radio" name="answer">
+      Városi
+    </label>
+
+    <br>
+    <label class="radio">
+      <input (click)="setRole('evil')" type="radio" name="answer">
+      Boszorkány
+    </label>
+  </div>
+  <a id="send" (click)="onSendButtonClick()" class="button is-link is-pulled-right">Send</a>
+</div>

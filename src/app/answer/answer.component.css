@@ -1,0 +1,30 @@
+.title{
+    padding-top: 40px;
+    font-weight: 400;
+    font-family: Roboto,sans-serif !important;
+}
+.textarea{
+    display: block;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 0.625em;
+}
+.container{
+    position: relative;
+    width: 50%;
+    margin-bottom: 70px;
+}
+#send{
+    position: absolute;
+    right:0;
+    margin: 10px;
+    margin-right: 0px;
+    width: 80px;
+}
+#srca{
+    float: right;
+}
+.content{
+    float: left;
+    width: 50%;
+}

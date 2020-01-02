@@ -1,0 +1,32 @@
+<div [class.is-active]="show" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Login</p>
+      <button (click)="closeModal()" class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="container">
+        <div class="field">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" [(ngModel)]="email" type="email" placeholder="Username" required>
+            <span class="icon is-small is-left">
+                <i class="material-icons">
+                    supervised_user_circle
+                    </i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input" [(ngModel)]="password" type="password" placeholder="Password" required>
+            <span class="icon is-small is-left">
+                <i class="material-icons">
+                    lock
+                    </i>
+            </span>
+      </div>
+    <footer class="modal-card-foot">
+      <button (click)="sendData()" class="button is-success">OK</button>
+    </footer>
+  </div>
