@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }                                          from '@angular/forms';
-import { ReactiveFormsModule }                                  from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AnswerComponent } from './answer/answer.component';
@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule, MatFormFieldModule, MatFormFieldControl } from '@angular/material';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { LoginmodalComponent } from './loginmodal/loginmodal.component';
+import { CookieService } from 'ngx-cookie-service';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -31,10 +33,11 @@ import { LoginmodalComponent } from './loginmodal/loginmodal.component';
     CommonModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ToastrModule.forRoot()
   ],
   providers: [
-    {provide: ErrorStateMatcher}
+    CookieService,
   ],
   bootstrap: [AppComponent]
 })

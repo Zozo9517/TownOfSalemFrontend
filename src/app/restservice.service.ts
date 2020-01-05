@@ -54,7 +54,7 @@ export class RestserviceService {
     }));
   }
 
-  public getUserForLogin(name: string): Observable<string> {
+  public getUserForLogin(name: User): Observable<string> {
     if (name === null || name === undefined) {
       throw new Error('Required parameter request was null or undefined when calling getProgramPage.');
     }
@@ -67,6 +67,32 @@ export class RestserviceService {
     const path = this.configuration.basePath() + '/getLogin';
     return this.httpClient.post<string>(path,
       JSON.stringify(name),
+      {
+        responseType: 'text' as 'json',
+        params: queryParameters,
+        withCredentials: this.configuration.withCredentials,
+        headers,
+        observe: 'response',
+        reportProgress: false
+      }
+    ).pipe(map((response: HttpResponse<string>) => {
+      return ( response.status === 204 ) ? undefined : response.body;
+    }));
+  }
+
+  public setRole(role: Role): Observable<string> {
+    if (role === null || role === undefined) {
+      throw new Error('Required parameter request was null or undefined when calling getProgramPage.');
+    }
+
+    const queryParameters = new HttpParams();
+
+    const headers = this.configuration.defaultHeaders;
+    // authentication (JsonWebToken) required
+
+    const path = this.configuration.basePath() + '/setRole';
+    return this.httpClient.post<string>(path,
+      JSON.stringify(role),
       {
         responseType: 'text' as 'json',
         params: queryParameters,

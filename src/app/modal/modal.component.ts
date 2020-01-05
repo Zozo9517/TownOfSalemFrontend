@@ -32,6 +32,7 @@ export class ModalComponent implements OnInit {
     this.rservice.postProgramPage(this.user)
       .subscribe(response => {
         this.show = false;
+        location.reload();
       });
   }
 

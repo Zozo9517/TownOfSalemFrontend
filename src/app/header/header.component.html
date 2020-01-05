@@ -1,7 +1,8 @@
 <div class="navbar is-dark">
   <h1 class="title is-2">TownOfSalem</h1>
-  <a id="register" (click)="register()" class="button is-warning is-pulled-right">Register</a>
-  <a id="signin" (click)="login()" class="button is-primary is-pulled-right">SignIn</a>
+  <a id="user" *ngIf="user" (click)="logout()" class="button is-danger is-pulled-right"> {{ username }} </a>
+  <a id="register" *ngIf="regist"  (click)="register()" class="button is-warning is-pulled-right">Register</a>
+  <a id="signin" *ngIf="log" (click)="login()" class="button is-primary is-pulled-right">SignIn</a>
 </div>
 <app-modal></app-modal>
 <app-loginmodal></app-loginmodal>
